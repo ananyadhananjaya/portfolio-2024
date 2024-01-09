@@ -26,6 +26,25 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted() {
+    window.addEventListener("wheel", this.handleWheelEvent);
+  },
+  beforeUnmount() {
+    window.removeEventListener("wheel", this.handleWheelEvent);
+  },
+  methods: {
+    handleWheelEvent(event) {
+      // Check if scrolling down (positive deltaY value)
+      if (event.deltaY > 0) {
+        this.$router.push("/about");
+      } 
+    },
+  },
+};
+</script>
+
 <style scoped>
 @keyframes fadeInUp {
   0% {
@@ -47,7 +66,7 @@
   }
   100% {
     height: 0px;
-    transform: translateY(40px); 
+    transform: translateY(40px);
   }
 }
 
@@ -64,13 +83,13 @@
 }
 
 .animate__animated {
-  animation-duration: 0.4s; 
+  animation-duration: 0.4s;
   animation-fill-mode: both;
-  animation-timing-function: ease-out; 
+  animation-timing-function: ease-out;
 }
 
 .animate__delay-1s {
-  animation-delay: 0.5s; 
+  animation-delay: 0.5s;
 }
 
 .animate__fadeInUp {

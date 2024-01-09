@@ -6,6 +6,7 @@
     </div>
     <nav class="space-x-4">
       <NuxtLink to="/about" class="nav-link p-2 px-4">About</NuxtLink>
+      <NuxtLink to="/connect" class="nav-link p-2 px-4">Connect</NuxtLink>
     </nav>
   </header>
 
